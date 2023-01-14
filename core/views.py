@@ -45,7 +45,8 @@ def checkout(request):
         if form.is_valid():
             print(form.cleaned_data)
             messages.success(request, 'You have successfully ordered')
-            return redirect('core:checkout')
+            return redirect('core:home')
+        messages.error(request, 'Invalid credentials')
         return redirect('core:checkout')
 
     form = PaymentForm()
@@ -66,7 +67,7 @@ def register(request):
 
                 messages.success(
                     request, 'You have successfully registered')
-                return redirect('core:checkout')
+                return redirect('core:home')
             else:
                 messages.error(request, 'Invalid credentials')
                 print('User is None')
