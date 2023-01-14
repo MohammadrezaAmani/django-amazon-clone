@@ -53,11 +53,6 @@ class SignUpForm(forms.Form):
     def exists(self):
         return User.objects.filter(email=self.cleaned_data['email']).exists()
 
-    def login(self):
-        if self.exists():
-            return User.objects.get(email=self.cleaned_data['email'])
-        return None
-
     def save(self):
         if not self.exists():
             user = User.objects.create_user(
@@ -67,4 +62,5 @@ class SignUpForm(forms.Form):
             )
             user.save()
             return user
+        print('User already exists')
         return None

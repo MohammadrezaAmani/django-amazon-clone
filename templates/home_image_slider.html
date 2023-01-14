@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <div class="container-fluid px-0">
   <!-- Image Slider Starts -->
   <div id="amazonImageSlider " class="carousel slide" data-ride="carousel ">
@@ -5,7 +8,7 @@
       <div class="carousel-item active">
         <a href="https://www.google.com "
           ><img
-            src="img/slider/slide01.png "
+            src="{% static 'img/slider/slide01.png' %} "
             class="d-block w-100"
             height="500 "
             alt="slide image 01 "
@@ -14,7 +17,7 @@
       <div class="carousel-item">
         <a href="https://www.google.com "
           ><img
-            src="img/slider/slide02.png "
+            src="{% static 'img/slider/slide02.png' %}"
             class="d-block w-100"
             height="500 "
             alt="slide image 02 "
@@ -23,7 +26,7 @@
       <div class="carousel-item">
         <a href="https://www.google.com "
           ><img
-            src="img/slider/slide03.png "
+            src="{% static 'img/slider/slide03.png' %}"
             class="d-block w-100"
             height="500 "
             alt="slide image 03 "
@@ -32,7 +35,7 @@
       <div class="carousel-item">
         <a href="https://www.google.com "
           ><img
-            src="img/slider/slide04.png "
+            src="{% static 'img/slider/slide04.png' %}"
             class="d-block w-100"
             height="500 "
             alt="slide image 04 "
@@ -41,7 +44,7 @@
       <div class="carousel-item">
         <a href="https://www.google.com "
           ><img
-            src="img/slider/slide05.png "
+            src="{% static 'img/slider/slide05.png' %}"
             class="d-block w-100"
             height="500 "
             alt="slide image 05 "
@@ -77,7 +80,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product02.png "
+                src="{% static 'img/product_images/prouct02.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -102,7 +105,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product03.png "
+                src="{% static 'img/product_images/prouct03.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -127,7 +130,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product03.png "
+                src="{% static 'img/product_images/prouct03.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -152,7 +155,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product02.png "
+                src="{% static 'img/product_images/prouct02.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -181,7 +184,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product02.png "
+                src="{% static 'img/product_images/prouct02.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -206,7 +209,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product03.png "
+                src="{% static 'img/product_images/prouct03.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -231,7 +234,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product03.png "
+                src="{% static 'img/product_images/prouct03.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -256,7 +259,7 @@
           <div class="card-body d-flex justify-content-center">
             <a href="# "
               ><img
-                src="img/product_images/product02.png "
+                src="{% static 'img/product_images/prouct02.png' %} "
                 alt="product image 01 "
                 class="img-fluid"
             /></a>
@@ -279,3 +282,4 @@
     <!-- Prouct Row Ends -->
   </div>
 </div>
+{% endblock content %}

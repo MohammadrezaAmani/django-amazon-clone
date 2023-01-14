@@ -1,8 +1,9 @@
 {% comment %} {% load cart_template_tags %} {% endcomment %}
 {% load static %}
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+{% comment %} 
         <button class="btn btn-outline-light" data-toggle="drawer" data-target="#amazonDrawer">
       <i class="fas fa-sliders-h"></i>
     </button>
@@ -25,9 +26,8 @@
           </button>
                 </div>
             </div>
-        </div>
+        </div>{% endcomment %}
         <!-- Drawer Ends -->
-
         <a class="navbar-brand pl-2" href="navbar.html">
             <img src="{% static 'img/amazon_logo_white.png' %}" height="30" width="100" alt="amazon logo white"> 
         </a>
