@@ -3,6 +3,31 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
+        <button class="btn btn-outline-light" data-toggle="drawer" data-target="#amazonDrawer">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+
+        <div class="drawer drawer-left slide" tabindex="-1" role="dialog" aria-labelledby="drawer-demo-title" aria-hidden="true" id="amazonDrawer">
+            <div class="drawer-content drawer-content-scrollable" role="document">
+                <div class="drawer-header bg-dark text-white">
+                    <h4 class="drawer-title mx-auto" id="drawer-demo-title">
+                        <i class="fas fa-user-circle"></i> Hello, Sign In
+                    </h4>
+                </div>
+                <div class="drawer-body">
+                    <h6 class="text-muted text-uppercase">Help & Settings</h6>
+                    <a href="your_account.html" class="btn btn-outline-success my-2 btn-sm">You Account</a>
+                    <a href="login.html" class="btn btn-warning my-2  btn-sm">Sign in</a>
+                </div>
+                <div class="drawer-footer">
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="drawer" aria-label="Close">
+            <i class="fas fa-2x fa-times"></i>
+          </button>
+                </div>
+            </div>
+        </div>
+        <!-- Drawer Ends -->
+
         <a class="navbar-brand pl-2" href="navbar.html">
             <img src="{% static 'img/amazon_logo_white.png' %}" height="30" width="100" alt="amazon logo white"> 
         </a>
@@ -38,45 +63,6 @@
             </form>
             <!-- Search Bar Ends -->
             <ul class="navbar-nav">
-                <!-- Preffered Language Starts -->
-                <li class="nav-item dropdown px-2">
-                    <a class="nav-link" href="#" id="prefLanguageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-2x fa-language"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="prefLanguageDropdown">
-                        <form class="p-3">
-                            <div class="dropdown-divider"></div>
-                            <div class="custom-control custom-radio mb-2">
-                                <input class="custom-control-input" type="radio" name="prefLang" id="englishLang" value="english" checked>
-                                <label class="custom-control-label" for="englishLang">
-                <img src="img/flag/english.svg" alt="uk flag" width="50" height="30">
-                </label>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="custom-control custom-radio mb-2">
-                                <input class="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="hindi" checked>
-                                <label class="custom-control-label" for="hindiLang">
-                <img src="img/flag/hindi.svg" alt="uk flag" width="50" height="30">
-                </label>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="custom-control custom-radio mb-2">
-                                <input class="custom-control-input" type="radio" name="prefLang" id="urduLang" value="urdu" checked>
-                                <label class="custom-control-label" for="urduLang">
-                <img src="img/flag/urdu.svg" alt="uk flag" width="50" height="30">
-                </label>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="custom-control custom-radio">
-                                <input class="custom-control-input" type="radio" name="prefLang" id="banglaLang" value="bangla" checked>
-                                <label class="custom-control-label" for="banglaLang">
-                <img src="img/flag/bangla.svg" alt="uk flag" width="50" height="30">
-                </label>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                        </form>
-                    </div>
-                </li>
                 <!-- Preffered Language Ends -->
                 <!-- User Account Starts -->
                 <li class="nav-item dropdown px-2">
