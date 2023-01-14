@@ -4,6 +4,9 @@ from .forms import PaymentForm, LoginForm, SignUpForm
 from django.views.generic import View
 from django.shortcuts import redirect
 from django.core.exceptions import ValidationError
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import authenticate, login, logout
 
 
 def item_list(request):
@@ -14,21 +17,20 @@ def order_list(request):
     return render(request=request, template_name='base.html', context={'orders': Order.objects.all()})
 
 
-def login(request):
+def loginDef(request):
     if request.method == 'POST':
         # print(request.POST)
         form = LoginForm(request.POST)
         if form.is_valid():
             form.save()
+            if form.login() is not None:
+                login(request, form.login())
+                return redirect('core:checkout')
             return redirect('core:checkout')
         else:
             raise ValidationError('Invalid form')
     form = LoginForm()
     return render(request=request, template_name='login.html', context={'form': form})
-
-
-def register(request):
-    return render(request=request, template_name='register.html', context={})
 
 
 def checkout(request):
@@ -52,7 +54,13 @@ def register(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('core:checkout')
+            user = authenticate(
+                email=form.cleaned_data['email'], password=form.cleaned_data['password'])
+            if user is not None:
+                login(request, user)
+                return redirect('core:checkout')
+            else:
+                print('User is None')
         else:
             raise ValidationError('Invalid form')
     form = SignUpForm()
