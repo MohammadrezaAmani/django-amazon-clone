@@ -82,3 +82,100 @@ def register(request):
 
 def home(request):
     return render(request=request, template_name='home_image_slider.html')
+
+
+def add_new_address(request):
+    return render(request=request, template_name='add_new_address.html')
+
+
+def add_new_product(request):
+    return render(request=request, template_name='add_new_product.html')
+
+
+def change_password(request):
+    return render(request=request, template_name='change_password.html')
+
+
+def footer(request):
+    return render(request=request, template_name='footer.html')
+
+
+def navbar(request):
+    return render(request=request, template_name='navbar.html')
+
+
+def new_change_password(request):
+    return render(request=request, template_name='new_change_password.html')
+
+
+def product_main_page(request):
+    return render(request=request, template_name='product_main_page.html')
+
+
+def product_review_form(request):
+    return render(request=request, template_name='product_review_form.html')
+
+
+def product_search_page(request):
+    return render(request=request, template_name='product_search_page.html')
+
+
+def review_order(request):
+    return render(request=request, template_name='review_order.html')
+
+
+def scripts(request):
+    return render(request=request, template_name='scripts.html')
+
+
+def select_address(request):
+    return render(request=request, template_name='select_address.html')
+
+
+def select_payment_method(request):
+    return render(request=request, template_name='select_payment_method.html')
+
+
+def seller_account_intro(request):
+    return render(request=request, template_name='seller_account_intro.html')
+
+
+def seller_account_register(request):
+    return render(request=request, template_name='seller_account_register.html')
+
+
+def seller_profle(request):
+    return render(request=request, template_name='seller_profle.html')
+
+
+def seller_review_form(request):
+    return render(request=request, template_name='seller_review_form.html')
+
+
+def shopping_cart(request):
+    return render(request=request, template_name='shopping_cart.html')
+
+
+def template(request):
+    return render(request=request, template_name='template.html')
+
+
+def your_account(request):
+    return render(request=request, template_name='your_account.html')
+
+
+def your_addresses(request):
+    return render(request=request, template_name='your_addresses.html')
+
+
+def your_orders(request):
+    return render(request=request, template_name='your_orders.html')
+
+
+def your_seller_account(request):
+    return render(request=request, template_name='your_seller_account.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('core:home')
