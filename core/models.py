@@ -75,3 +75,18 @@ class Order(models.Model):
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})
+
+
+class Slider(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+    url = models.CharField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("Slider_detail", kwargs={"pk": self.pk})

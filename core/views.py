@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Order, OrderItem, Item
+from .models import Order, OrderItem, Item, Slider
 from .forms import PaymentForm, LoginForm, SignUpForm
 from django.views.generic import View
 from django.shortcuts import redirect
@@ -81,7 +81,10 @@ def register(request):
 
 
 def home(request):
-    return render(request=request, template_name='home_image_slider.html')
+    context = {
+        'sliders': Slider.objects.all()
+    }
+    return render(request=request, template_name='home_image_slider.html', context=context)
 
 
 def add_new_address(request):
