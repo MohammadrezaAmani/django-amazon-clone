@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8" />
+        <title>انتقال به درگاه پرداخت</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 50px;
+            }
+            h5 {
+                color: #333;
+            }
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        {% if url %}
+        <h5>در حال اتصال به درگاه پرداخت...</h5>
+        <form id="id_form" action="{{ url }}" method="{{ method }}">
+            {% csrf_token %} {% for key, value in params.items %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}" />
+            {% endfor %}
+        </form>
+        <script type="text/javascript">
+            window.onload = function () {
+                document.forms["id_form"].submit();
+            };
+        </script>
+        {% else %}
+        <h5 class="error">خطا در ارتباط با درگاه</h5>
+        {% endif %}
+    </body>
+</html>
