@@ -1,11 +1,12 @@
 from rest_framework import serializers
+
 from .models import (
     Category,
-    Product,
-    ProductVariant,
-    ProductAttribute,
     Inventory,
+    Product,
+    ProductAttribute,
     ProductImage,
+    ProductVariant,
 )
 
 

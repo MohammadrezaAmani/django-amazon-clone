@@ -1,9 +1,11 @@
 from celery import shared_task
 from django.contrib.auth import get_user_model
+
 from apps.audit_log.models import AuditLog
 from apps.audit_log.utils import log_user_action
 from apps.notifications.utils import send_notification
-from .models import Product, Inventory
+
+from .models import Inventory, Product
 
 User = get_user_model()
 

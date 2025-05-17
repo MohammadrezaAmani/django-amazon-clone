@@ -2,11 +2,11 @@ from django.contrib import admin
 
 from .models import (
     Category,
-    Product,
-    ProductVariant,
-    ProductAttribute,
     Inventory,
+    Product,
+    ProductAttribute,
     ProductImage,
+    ProductVariant,
 )
 
 

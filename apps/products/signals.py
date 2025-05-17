@@ -1,6 +1,7 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import Product, Inventory
+
+from .models import Inventory, Product
 from .tasks import notify_admins_on_low_stock, notify_admins_on_new_product
 
 

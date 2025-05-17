@@ -1,7 +1,9 @@
 from rest_framework import serializers
-from .models import Cart, CartItem
-from apps.products.serializers import ProductVariantSerializer
+
 from apps.products.models import ProductVariant
+from apps.products.serializers import ProductVariantSerializer
+
+from .models import Cart, CartItem
 
 
 class CartItemSerializer(serializers.ModelSerializer):
