@@ -14,7 +14,7 @@ from django_redis import get_redis_connection
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from accounts.admin import UserAdmin
+from apps.accounts.admin import UserAdmin
 
 User = get_user_model()
 

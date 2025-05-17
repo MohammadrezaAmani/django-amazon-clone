@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 
 
-class NotificationsConfig(AppConfig):
+class PaymentConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"  # type: ignore
-    name = "notifications"
+    name = "apps.payment"
+    verbose_name = "Payment System"

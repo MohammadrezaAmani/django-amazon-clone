@@ -17,7 +17,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
-from accounts.serializers import (
+from apps.accounts.serializers import (
     ForgotPasswordSerializer,
     LoginSerializer,
     RefreshSerializer,
@@ -27,8 +27,8 @@ from accounts.serializers import (
     UserSerializer,
     VerifySerializer,
 )
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
 
 logger = logging.getLogger(__name__)
 

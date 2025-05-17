@@ -4,7 +4,7 @@ import sentry_sdk
 from sentry_sdk.integrations.celery import CeleryIntegration
 from sentry_sdk.integrations.django import DjangoIntegration
 
-from audit_log.utils import log_sentry_error
+from apps.audit_log.utils import log_sentry_error
 
 
 def init_sentry():

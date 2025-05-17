@@ -53,12 +53,12 @@ INSTALLED_APPS = [
     "django_celery_results",
     "debug_toolbar",
     "silk",
-    "accounts",
-    "notifications",
-    "audit_log",
-    "common",
-    "payment",
-    "feedback",
+    "apps.accounts",
+    "apps.notifications",
+    "apps.audit_log",
+    "apps.common",
+    "apps.payment",
+    "apps.feedback",
 ]
 
 MIDDLEWARE = [
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "audit_log.middleware.AuditLogMiddleware",
+    "apps.audit_log.middleware.AuditLogMiddleware",
     "silk.middleware.SilkyMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]

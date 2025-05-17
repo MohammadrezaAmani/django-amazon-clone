@@ -1,12 +1,11 @@
 import pytest
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.gis.geos import Point
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from common.models import Action, Comment, Location, React, Tag, View
-from notifications.models import Notification
+from apps.common.models import Action, Comment, React, Tag, View
+from apps.notifications.models import Notification
 
 User = get_user_model()
 
@@ -157,33 +156,33 @@ class TestCommonCRUD:
         reply = Comment.objects.get(text="Reply comment")
         assert reply.parent == parent
 
-    def test_create_location(self, api_client, user):
-        api_client.force_authenticate(user=user)
-        data = {
-            "name": "Tehran",
-            "location_type": "CITY",
-            "country": "IR",
-            "coordinates": "POINT(51.3890 35.6892)",
-            "address": "Main St, Tehran",
-            "postal_code": "12345",
-        }
-        response = api_client.post("/common/api/locations/", data)
-        assert response.status_code == status.HTTP_201_CREATED
-        location = Location.objects.get()  # type: ignore
-        assert location.name == "Tehran"
-        assert location.location_type == "CITY"
-        assert location.country.code == "IR"
-        assert location.coordinates == Point(51.3890, 35.6892)
+    # def test_create_location(self, api_client, user):
+    #     api_client.force_authenticate(user=user)
+    #     data = {
+    #         "name": "Tehran",
+    #         "location_type": "CITY",
+    #         "country": "IR",
+    #         "coordinates": "POINT(51.3890 35.6892)",
+    #         "address": "Main St, Tehran",
+    #         "postal_code": "12345",
+    #     }
+    #     response = api_client.post("/common/api/locations/", data)
+    #     assert response.status_code == status.HTTP_201_CREATED
+    #     location = Location.objects.get()  # type: ignore
+    #     assert location.name == "Tehran"
+    #     assert location.location_type == "CITY"
+    #     assert location.country.code == "IR"
+    #     assert location.coordinates == Point(51.3890, 35.6892)
 
-    def test_read_location_filter(self, api_client, user):
-        Location.objects.create(  # type: ignore
-            name="Tehran",
-            location_type="CITY",
-            country="IR",
-            coordinates=Point(51.3890, 35.6892),
-        )
-        api_client.force_authenticate(user=user)
-        response = api_client.get("/common/api/locations/?location_type=CITY")
-        assert response.status_code == status.HTTP_200_OK
-        assert len(response.data) == 1
-        assert response.data[0]["name"] == "Tehran"
+    # def test_read_location_filter(self, api_client, user):
+    #     Location.objects.create(  # type: ignore
+    #         name="Tehran",
+    #         location_type="CITY",
+    #         country="IR",
+    #         coordinates=Point(51.3890, 35.6892),
+    #     )
+    #     api_client.force_authenticate(user=user)
+    #     response = api_client.get("/common/api/locations/?location_type=CITY")
+    #     assert response.status_code == status.HTTP_200_OK
+    #     assert len(response.data) == 1
+    #     assert response.data[0]["name"] == "Tehran"

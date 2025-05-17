@@ -8,9 +8,13 @@ from rest_framework import status
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from notifications.consumers import NotificationConsumer
-from notifications.models import Notification, NotificationBatch, NotificationTemplate
-from notifications.utils import send_batch_notification, send_notification
+from apps.notifications.consumers import NotificationConsumer
+from apps.notifications.models import (
+    Notification,
+    NotificationBatch,
+    NotificationTemplate,
+)
+from apps.notifications.utils import send_batch_notification, send_notification
 
 User = get_user_model()
 

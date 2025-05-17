@@ -4,8 +4,8 @@ from django.core.serializers import serialize
 from django.db.models.signals import post_save, pre_delete, pre_save
 from django.dispatch import receiver
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
 
 
 @receiver(pre_save)

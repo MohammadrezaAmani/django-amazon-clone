@@ -1,9 +1,9 @@
 from celery import shared_task
 from django.contrib.auth import get_user_model
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
-from notifications.utils import send_notification
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
+from apps.notifications.utils import send_notification
 
 from .models import Feedback
 

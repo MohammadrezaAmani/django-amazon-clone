@@ -2,9 +2,9 @@ import pytest
 from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
-from notifications.models import Notification
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
+from apps.notifications.models import Notification
 
 User = get_user_model()
 

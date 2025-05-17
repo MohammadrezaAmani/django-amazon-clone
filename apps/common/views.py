@@ -4,8 +4,8 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
 
 from .models import Action, Comment, React, Tag, View  # , Location
 from .serializers import (  # LocationSerializer,

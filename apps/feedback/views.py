@@ -2,8 +2,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
 
 from .models import Feedback
 from .serializers import FeedbackSerializer

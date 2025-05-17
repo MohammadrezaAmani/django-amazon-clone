@@ -5,12 +5,12 @@ from azbankgateways import models as bank_models
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.gis.geos import Point
+from payment.models import Payment, PaymentGatewayConfig, Transaction
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from common.models import Location
-from notifications.models import Notification
-from payment.models import Payment, PaymentGatewayConfig, Transaction
+from apps.common.models import Location
+from apps.notifications.models import Notification
 
 User = get_user_model()
 

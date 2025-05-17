@@ -1,4 +1,4 @@
-# from common.models import Location
+# from apps.common.models import Location
 import uuid
 from io import BytesIO
 

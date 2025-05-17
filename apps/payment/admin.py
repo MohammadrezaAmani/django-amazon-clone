@@ -9,9 +9,9 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
-from notifications.utils import send_notification
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
+from apps.notifications.utils import send_notification
 
 from .models import Payment, PaymentGatewayConfig, Refund, Transaction
 from .utils import verify_payment

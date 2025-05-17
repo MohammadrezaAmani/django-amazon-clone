@@ -9,11 +9,11 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/", include("accounts.urls")),
-    path("notifications/", include("notifications.urls")),
-    path("logs/", include("audit_log.urls")),
-    path("payment/", include("payment.urls")),
-    path("c/", include("common.urls")),
+    path("accounts/", include("apps.accounts.urls")),
+    path("notifications/", include("apps.notifications.urls")),
+    path("logs/", include("apps.audit_log.urls")),
+    path("payment/", include("apps.payment.urls")),
+    path("c/", include("apps.common.urls")),
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "docs/",
@@ -21,7 +21,7 @@ urlpatterns = [
         name="swagger-ui",
     ),
     path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
-    path("feedback/", include("feedback.urls")),
+    path("feedback/", include("apps.feedback.urls")),
     path("silk/", include("silk.urls", namespace="silk")),
 ]
 

@@ -8,9 +8,9 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
-from audit_log.models import AuditLog
-from audit_log.utils import log_user_action
-from notifications.utils import send_notification
+from apps.audit_log.models import AuditLog
+from apps.audit_log.utils import log_user_action
+from apps.notifications.utils import send_notification
 
 from .models import Payment, PaymentGatewayConfig, Refund, Transaction
 from .serializers import (

@@ -1,6 +1,6 @@
 import logging
 
-from notifications.utils import send_notification
+from apps.notifications.utils import send_notification
 
 from .models import AuditLog
 
