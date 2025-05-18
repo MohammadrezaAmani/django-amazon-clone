@@ -1,0 +1,31 @@
+{% extends "admin/change_list.html" %} {% block extrahead %} {{ block.super }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("salesChart").getContext("2d");
+        const reports = JSON.parse("{{ reports_json|escapejs }}");
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: reports.map((r) => r.start_date),
+                datasets: [
+                    {
+                        label: "Total Revenue",
+                        data: reports.map((r) => r.total_revenue),
+                        backgroundColor: "#4e73df",
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true },
+                },
+            },
+        });
+    });
+</script>
+{% endblock %} {% block content %} {{ block.super }}
+<div>
+    <canvas id="salesChart" width="400" height="200"></canvas>
+</div>
+{% endblock %}
